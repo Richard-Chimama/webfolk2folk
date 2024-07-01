@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, Input, Stack, Typography } from "@mui/joy";
+import { Box, Button, Input, Stack, Typography } from "@mui/joy";
 
 const CustomerRegister = () => {
   return (
@@ -21,11 +21,12 @@ const CustomerRegister = () => {
           teval och kommande evenemang.
         </Typography>
         </Box>
-        <FormControl>
+        <form method="POST" data-netlify="true">
           <Input
             sx={{ "--Input-decoratorChildHeight": "45px" }}
             placeholder="skriv in din mailadress"
             type="email"
+            name="email"
             required
             endDecorator={
               <Button
@@ -41,7 +42,7 @@ const CustomerRegister = () => {
               </Button>
             }
           />
-        </FormControl>
+        </form>
       </Box>
     </Stack>
   );
