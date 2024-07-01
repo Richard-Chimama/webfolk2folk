@@ -1,4 +1,4 @@
-import { CssBaseline, Container, Typography, Box } from '@mui/joy';
+import { CssBaseline, Typography, Box } from '@mui/joy';
 import dayjs from 'dayjs';
 
 const WeeklySchedule = () => {

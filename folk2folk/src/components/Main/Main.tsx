@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Stack, Typography } from "@mui/joy";
+import { Box, Divider, Grid, Typography } from "@mui/joy";
 import Spacer from "../Spacer";
 import * as S from "./styled";
 import WeeklySchedule from "../WeeklyShedule";
