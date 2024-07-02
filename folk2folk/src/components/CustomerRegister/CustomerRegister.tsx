@@ -21,7 +21,7 @@ const CustomerRegister = () => {
           teval och kommande evenemang.
         </Typography>
         </Box>
-        <form data-netlify="true">
+        <form name="contact" data-netlify="true">
           <Input
             sx={{ "--Input-decoratorChildHeight": "45px" }}
             placeholder="skriv in din mailadress"
@@ -32,7 +32,6 @@ const CustomerRegister = () => {
               <Button
                 variant="solid"
                 type="submit"
-                name="submit"
                 sx={{
                   borderTopLeftRadius: 0,
                   borderBottomLeftRadius: 0,
