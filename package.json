@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "@types/node": "^20.14.9"
-  },
-  "dependencies": {
-    "dayjs": "^1.11.11",
-    "styled-components": "^6.1.11"
-  }
-}
