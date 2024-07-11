@@ -27,7 +27,7 @@ const Main = () => {
         <Spacer h="25px" />
         <S.Text>
           Välkommen till Folk till Folk Secondhand, din nya resmål för
-          secondhand-kläder av hög kvalitet som ligger på Störtloppsvägen 20. På
+          secondhand-kläder av hög kvalitet som ligger på <b>Störtloppsvägen 20</b>. På
           Folk till Folk erbjuder vi ett brett utbud av prisvärda
           secondhand-kläder för män, kvinnor och barn. Vi sommanställer noggrant
           vårt urval genom att köpa från välrenommerade återvinningsföretag för
