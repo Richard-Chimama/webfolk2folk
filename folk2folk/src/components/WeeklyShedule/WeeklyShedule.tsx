@@ -1,5 +1,5 @@
-import { CssBaseline, Typography, Box } from '@mui/joy';
 import dayjs from 'dayjs';
+import { CssBaseline, Typography, Box } from '@mui/joy';
 
 const WeeklySchedule = () => {
   const daysOfWeek = [
