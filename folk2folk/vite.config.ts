@@ -10,6 +10,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: PORT
+    port: PORT,
+    host: '0.0.0.0'
   }
 })
