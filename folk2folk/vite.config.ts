@@ -9,6 +9,9 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+  },
   server: {
     port: PORT,
     host: '0.0.0.0'
