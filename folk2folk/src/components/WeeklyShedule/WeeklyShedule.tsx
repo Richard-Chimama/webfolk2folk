@@ -25,12 +25,12 @@ const WeeklySchedule = () => {
         if (isToday) {
           if (dayInfo.open && dayInfo.close) {
             if (currentTime < dayInfo.open) {
-              statusMessage = `Will open at ${dayInfo.open}`;
+              statusMessage = `ska öppna kl ${dayInfo.open}`;
             } else if(currentTime > dayInfo.open && currentTime < dayInfo.close ) {
-              statusMessage = `Will close at ${dayInfo.close}`;
+              statusMessage = `ska öppna kl ${dayInfo.close}`;
             }
           } else {
-            statusMessage = 'Closed today';
+            statusMessage = 'Stängt idag';
           }
         }
 
