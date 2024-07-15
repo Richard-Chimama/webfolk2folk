@@ -3,6 +3,9 @@ import { useContext, useState } from "react";
 import { SnackbarContext } from "../../App";
 
 const CustomerRegister = () => {
+  const isProd:boolean = import.meta.env.VITE_ISPROD
+  const url = !isProd ? import.meta.env.VITE_PROD :import.meta.env.VITE_DEV
+  console.log(url)
   const [userEmail, setUserEmail] = useState("");
   const snackbarContext = useContext(SnackbarContext);
 
@@ -19,7 +22,8 @@ const CustomerRegister = () => {
       console.log("email", userEmail);
 
       try {
-        const response = await fetch("http://0.0.0.0:4000", {
+        console.log(url)
+        const response = await fetch(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
