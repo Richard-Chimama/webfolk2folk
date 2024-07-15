@@ -11,7 +11,9 @@ const Header: FC<ownprop> = () => {
         width: "100%",
         height: "50vh",
       }}
-    ></Box>
+    >
+      <div id="home"></div>
+    </Box>
   );
 };
 

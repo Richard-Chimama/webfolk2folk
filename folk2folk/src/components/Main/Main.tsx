@@ -5,11 +5,13 @@ import WeeklySchedule from "../WeeklyShedule";
 
 const Main = () => {
   return (
-    <Box sx={{marginBottom:'15px'}}>
+    <Box sx={{ marginBottom: "15px" }}>
+      <div id="about">
       <Box
         sx={{
-          mx: "15%",
-          width: "70%",
+          mx: {xs:"2%", md:"10%"},
+          width: {xs:'97%', md:'80%'},
+        
         }}
       >
         <Spacer h="35px" />
@@ -27,11 +29,12 @@ const Main = () => {
         <Spacer h="25px" />
         <S.Text>
           Välkommen till Folk till Folk Secondhand, din nya resmål för
-          secondhand-kläder av hög kvalitet som ligger på <b>Störtloppsvägen 20</b>. På
-          Folk till Folk erbjuder vi ett brett utbud av prisvärda
-          secondhand-kläder för män, kvinnor och barn. Vi sommanställer noggrant
-          vårt urval genom att köpa från välrenommerade återvinningsföretag för
-          att säkerställa att varje föremål uppfyller våra göga knalitetskrav.
+          secondhand-kläder av hög kvalitet som ligger på{" "}
+          <b>Störtloppsvägen 20</b>. På Folk till Folk erbjuder vi ett brett
+          utbud av prisvärda secondhand-kläder för män, kvinnor och barn. Vi
+          sommanställer noggrant vårt urval genom att köpa från välrenommerade
+          återvinningsföretag för att säkerställa att varje föremål uppfyller
+          våra göda knalitetskrav.
         </S.Text>
         <Spacer h="25px" />
         <S.Text>
@@ -51,41 +54,30 @@ const Main = () => {
         <Grid container spacing={2}>
           <Grid xs={12} md={6} sm={6}>
             <Box>
-                <Spacer h='16px'/>
+              <Spacer h="16px" />
               <Typography component="h1">ÖPPETTIDER</Typography>
-                <Spacer h="16px" />
+              <Spacer h="16px" />
               <WeeklySchedule />
             </Box>
           </Grid>
           <Grid xs={12} md={6} sm={6}>
-            <Box>
-              <S.Text>
-                Just nu är denna webbplats och sociala medier under utveckling.
-                Under tiden, följ oss gärna på Instagram, vi blir glada. Vi ses
-                senare!
-              </S.Text>
-              <S.Text>
-                <Typography
-                  component="a"
-                  href="https://www.instagram.com/folk2folk_sthlm?igsh=MWx6ZDVuaTdnandmNw=="
-                  target="_blank"
-                >
-                  Instagram @folk2folk_sthlm
-                </Typography>
-                <Typography
-                  component="a"
-                  href="https://www.tiktok.com/@folk2folk_sthlm?_t=8ndYY4vzpMz&_r=1"
-                  target="_blank"
-                >
-                  TikTok @folk2folk_sthlm
-                </Typography>
-              </S.Text>
-            </Box>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.4001493494702!2d17.967989799999998!3d59.292874000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f779ddec055e3%3A0xe1f1691e2891a443!2sFolk%20till%20folk!5e0!3m2!1ssv!2sse!4v1720987305027!5m2!1ssv!2sse"
+              width="100%"
+              height="450"
+              style={{border:"0px"}}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </Grid>
         </Grid>
       </Box>
+      </div>
     </Box>
   );
 };
 
 export default Main;
+
+

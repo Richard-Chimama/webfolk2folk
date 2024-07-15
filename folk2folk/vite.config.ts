@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 dotenv.config()
 
-const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 4091;
 
 // https://vitejs.dev/config/
 export default defineConfig({
