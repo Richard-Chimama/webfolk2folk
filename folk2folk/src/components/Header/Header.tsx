@@ -1,5 +1,6 @@
 import { Box } from "@mui/joy";
 import { FC } from "react";
+import butik from "../../assets/butik.jpg"
 
 type ownprop = Object;
 
@@ -9,10 +10,10 @@ const Header: FC<ownprop> = () => {
       sx={{
         backgroundColor: "gainsboro",
         width: "100%",
-        height: "50vh",
       }}
     >
       <div id="home"></div>
+      <img src={butik}  width={'100%'}/>
     </Box>
   );
 };
