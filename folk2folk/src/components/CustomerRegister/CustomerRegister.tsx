@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { SnackbarContext } from "../../App";
 
 const CustomerRegister = () => {
+  //const isProd:boolean = import.meta.env.VITE_ISPROD
+  //const url = !isProd ? import.meta.env.VITE_PROD :import.meta.env.VITE_DEV
   const [userEmail, setUserEmail] = useState("");
   const snackbarContext = useContext(SnackbarContext);
 
@@ -16,10 +18,8 @@ const CustomerRegister = () => {
     evt.preventDefault();
 
     if (userEmail.trim().length > 8) {
-      console.log("email", userEmail);
-
       try {
-        const response = await fetch("http://0.0.0.0:4000", {
+        const response = await fetch(import.meta.env.VITE_PROD, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
