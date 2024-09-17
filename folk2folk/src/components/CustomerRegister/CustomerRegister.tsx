@@ -27,7 +27,7 @@ const CustomerRegister = () => {
           body: JSON.stringify({
             email: userEmail,
             subject: subject,
-            text: userText,
+            message: userText,
           }),
         });
 
