@@ -1,12 +1,15 @@
 import { Box, Button, Input, Stack, Typography, Textarea } from "@mui/joy";
 import { useContext, useState } from "react";
 import { SnackbarContext } from "../../App";
+import { Modal } from "@mui/material";
+import FacebookCircularProgress from "../FacebookCircularProgress";
 
 const CustomerRegister = () => {
   const [userEmail, setUserEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [userText, setUserText] = useState("");
   const snackbarContext = useContext(SnackbarContext);
+  const [loading, setLoading] = useState(false);
 
   if (!snackbarContext) {
     throw new Error("Component must be used within a SnackbarProvider");
@@ -18,6 +21,7 @@ const CustomerRegister = () => {
     evt.preventDefault();
 
     if (userEmail.trim().length > 8 && subject.trim() && userText.trim()) {
+      setLoading(true);
       try {
         const response = await fetch(import.meta.env.VITE_PROD, {
           method: "POST",
@@ -43,7 +47,9 @@ const CustomerRegister = () => {
         setUserEmail("");
         setSubject("");
         setUserText("");
+        setLoading(false)
       } catch (error) {
+        setLoading(false);
         handleClick(
           { vertical: "top", horizontal: "center" },
           "Hoppsan! Något gick fel.",
@@ -67,6 +73,13 @@ const CustomerRegister = () => {
       alignItems="center"
       bgcolor={"lightgrey"}
     >
+      {" "}
+      <Modal
+        open={loading}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <FacebookCircularProgress size={50} />
+      </Modal>
       <div id="contact">
         <Box
           sx={{
@@ -76,7 +89,7 @@ const CustomerRegister = () => {
             alignItems: "center",
             marginBottom: "10px",
             padding: { xs: "0 20px", sm: "0 40px" }, // Mobile friendly
-            width:{md: "700px"}
+            width: { md: "700px" },
           }}
         >
           <Typography
@@ -105,9 +118,9 @@ const CustomerRegister = () => {
           </Typography>
         </Box>
         <form name="contact" onSubmit={handleSubmit}>
-          <Stack spacing={2} mx={{ xs: 2 }} >
+          <Stack spacing={2} mx={{ xs: 2 }}>
             <Input
-              sx={{ height:"45px",}}
+              sx={{ height: "45px" }}
               placeholder="Skriv in din e-postadress"
               type="email"
               name="email"
@@ -116,7 +129,7 @@ const CustomerRegister = () => {
               required
             />
             <Input
-              sx={{ height:'45px' }}
+              sx={{ height: "45px" }}
               placeholder="Ämne"
               name="subject"
               value={subject}
@@ -137,7 +150,7 @@ const CustomerRegister = () => {
                 width: "100%",
                 backgroundColor: "black",
                 color: "white",
-                height: '45px'
+                height: "45px",
               }}
             >
               Skicka in
