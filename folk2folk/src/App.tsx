@@ -6,7 +6,6 @@ import CustomerRegister from "./components/CustomerRegister";
 import Footer from "./components/Footer";
 import { createContext, useState } from "react";
 import GoogleReviewRequest from "./components/GoogleReview";
-import Spacer from "./components/Spacer";
 interface State {
   open: boolean;
   message: string;
