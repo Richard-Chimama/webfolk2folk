@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import CustomerRegister from "./components/CustomerRegister";
 import Footer from "./components/Footer";
 import { createContext, useState } from "react";
+import GoogleReviewRequest from "./components/GoogleReview";
+import Spacer from "./components/Spacer";
 interface State {
   open: boolean;
   message: string;
@@ -74,6 +76,7 @@ function App() {
         <Header />
         <Main />
         <CustomerRegister />
+        <GoogleReviewRequest />
         <Footer />
       </SnackbarContext.Provider>
     </Box>

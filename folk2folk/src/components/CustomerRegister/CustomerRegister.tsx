@@ -1,15 +1,15 @@
-import { Box, Button, Input, Stack, Typography } from "@mui/joy";
+import { Box, Button, Input, Stack, Typography, Textarea } from "@mui/joy";
 import { useContext, useState } from "react";
 import { SnackbarContext } from "../../App";
 
 const CustomerRegister = () => {
-  //const isProd:boolean = import.meta.env.VITE_ISPROD
-  //const url = !isProd ? import.meta.env.VITE_PROD :import.meta.env.VITE_DEV
   const [userEmail, setUserEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [userText, setUserText] = useState("");
   const snackbarContext = useContext(SnackbarContext);
 
   if (!snackbarContext) {
-    throw new Error("Component2 must be used within a SnackbarProvider");
+    throw new Error("Component must be used within a SnackbarProvider");
   }
 
   const { handleClick } = snackbarContext;
@@ -17,7 +17,7 @@ const CustomerRegister = () => {
   const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    if (userEmail.trim().length > 8) {
+    if (userEmail.trim().length > 8 && subject.trim() && userText.trim()) {
       try {
         const response = await fetch(import.meta.env.VITE_PROD, {
           method: "POST",
@@ -26,6 +26,8 @@ const CustomerRegister = () => {
           },
           body: JSON.stringify({
             email: userEmail,
+            subject: subject,
+            text: userText,
           }),
         });
 
@@ -33,27 +35,34 @@ const CustomerRegister = () => {
           throw new Error("Network response was not ok");
         }
 
-        await response;
         handleClick(
           { vertical: "top", horizontal: "center" },
           "E-post har skickats!",
-          '#07f9c1'
+          "#07f9c1"
         );
-        setUserEmail('')
+        setUserEmail("");
+        setSubject("");
+        setUserText("");
       } catch (error) {
         handleClick(
           { vertical: "top", horizontal: "center" },
           "Hoppsan! Något gick fel.",
-          '#f95e85'
+          "#f95e85"
         );
         console.error("Error:", error);
       }
+    } else {
+      handleClick(
+        { vertical: "top", horizontal: "center" },
+        "Vänligen fyll i alla fält korrekt.",
+        "#f95e85"
+      );
     }
   };
 
   return (
     <Stack
-      height="60vh"
+      height="100vh"
       justifyContent="center"
       alignItems="center"
       bgcolor={"lightgrey"}
@@ -66,55 +75,74 @@ const CustomerRegister = () => {
             justifyContent: "center",
             alignItems: "center",
             marginBottom: "10px",
+            padding: { xs: "0 20px", sm: "0 40px" }, // Mobile friendly
+            width:{md: "700px"}
           }}
         >
           <Typography
             component="h1"
             sx={{
-              fontSize: "34px",
-              lineHeight: "62px",
+              fontSize: "28px", // Adjusted for mobile
+              lineHeight: "42px",
               fontWeight: "600",
               fontFamily: "Montserrat, sans-serif",
+              textAlign: "center",
             }}
           >
-            Bli medlem hos oss!
+            Har du några frågor?
           </Typography>
           <Typography
             component="i"
             sx={{
-              width: "60%",
+              width: "100%", // Full width for mobile responsiveness
               textAlign: "center",
               lineHeight: "19px",
               fontFamily: "Montserrat, sans-serif",
+              marginBottom: "20px",
             }}
           >
-            Registrera dig för att få uppdateringar från vår butik, inklusive
-            nya teval och kommande evenemang.
+            Kontakta oss, vi är ett e-postmeddelande bort.
           </Typography>
         </Box>
         <form name="contact" onSubmit={handleSubmit}>
-          <Input
-            sx={{ "--Input-decoratorChildHeight": "45px", mx: { xs: 2 } }}
-            placeholder="skriv in din mailadress"
-            type="email"
-            name="email"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
-            required
-            endDecorator={
-              <Button
-                variant="solid"
-                type="submit"
-                sx={{
-                  borderTopLeftRadius: 0,
-                  borderBottomLeftRadius: 0,
-                  backgroundColor: "black",
-                }}
-              >
-                Skicka in
-              </Button>
-            }
-          />
+          <Stack spacing={2} mx={{ xs: 2 }} >
+            <Input
+              sx={{ height:"45px",}}
+              placeholder="Skriv in din e-postadress"
+              type="email"
+              name="email"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
+              required
+            />
+            <Input
+              sx={{ height:'45px' }}
+              placeholder="Ämne"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
+            />
+            <Textarea
+              minRows={4}
+              placeholder="Meddelande"
+              name="text"
+              value={userText}
+              onChange={(e) => setUserText(e.target.value)}
+              required
+            />
+            <Button
+              type="submit"
+              sx={{
+                width: "100%",
+                backgroundColor: "black",
+                color: "white",
+                height: '45px'
+              }}
+            >
+              Skicka in
+            </Button>
+          </Stack>
         </form>
       </div>
     </Stack>

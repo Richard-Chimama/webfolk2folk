@@ -23,16 +23,6 @@ const Footer = () => {
               >
                 Instagram @folktfolk
               </Typography>
-              <Typography
-                component="a"
-                href="https://www.tiktok.com/@folk2folk_sthlm?_t=8ndYY4vzpMz&_r=1"
-                target="_blank"
-                sx={{
-                    color:'skyblue'
-                }}
-              >
-                TikTok @folk2folk_sthlm
-              </Typography>
             </Box>
           </Box>
         </Grid>

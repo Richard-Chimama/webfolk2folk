@@ -19,7 +19,7 @@ const WeeklySchedule = () => {
     <Box>
       <CssBaseline />
       {daysOfWeek.map((dayInfo, index) => {
-        const isToday = currentDay === index;
+        const isToday = currentDay === (index+1);
         let statusMessage = '';
 
         if (isToday) {
