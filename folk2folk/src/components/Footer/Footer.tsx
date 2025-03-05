@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/joy";
 import * as S from "./style"
 
 const Footer = () => {
+  const date = new Date().getFullYear();
   return (
     <Box >
       <Grid container spacing={2} style={{height:'500px', padding: '20px'}}>
@@ -15,13 +16,13 @@ const Footer = () => {
             <Box>
               <Typography
                 component="a"
-                href="https://www.instagram.com/folktfolk"
+                href="https://www.instagram.com/folktillfolk1"
                 target="_blank"
                 sx={{
                     color:'skyblue'
                 }}
               >
-                Instagram @folktfolk
+                Instagram @folktillfolk1
               </Typography>
             </Box>
           </Box>
@@ -29,7 +30,7 @@ const Footer = () => {
         <Grid xs={12} md={6} sm={6}></Grid>
       </Grid>
       <S.Footer>
-            <p>&copy; 2024 Folk till Folk Secondhand Store. Alla rättigheter förbehållna..</p>
+            <p>&copy; {date} Folk till Folk Secondhand Store. Alla rättigheter förbehållna..</p>
         </S.Footer>
     </Box>
   );

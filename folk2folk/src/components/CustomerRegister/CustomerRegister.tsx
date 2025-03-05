@@ -102,7 +102,7 @@ const CustomerRegister = () => {
               textAlign: "center",
             }}
           >
-            Har du några frågor?
+            Har du fråga?
           </Typography>
           <Typography
             component="i"
