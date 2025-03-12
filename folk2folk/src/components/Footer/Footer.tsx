@@ -33,8 +33,7 @@ const Footer = () => {
       </Box>
       <S.Footer>
         <p>
-          &copy; {date} Folk till Folk Secondhand Store. Alla rättigheter
-          förbehållna..
+          &copy; {date} FolktillFolk Secondhand Store. All right reserved.
         </p>
       </S.Footer>
     </Box>
