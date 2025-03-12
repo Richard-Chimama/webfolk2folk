@@ -1,6 +1,7 @@
-import { Box, Button, Stack, Typography } from "@mui/joy";
+import { Box, Button, Stack } from "@mui/joy";
 import { useContext } from "react";
 import { SnackbarContext } from "../../App";
+import * as S from "./styled";
 
 const GoogleReviewRequest = () => {
   const snackbarContext = useContext(SnackbarContext);
@@ -12,10 +13,7 @@ const GoogleReviewRequest = () => {
   const { handleClick } = snackbarContext;
 
   const handleReviewClick = () => {
-    window.open(
-      "https://g.page/r/CUOkkSgeafHhEBM/review",
-      "_blank"
-    );
+    window.open("https://g.page/r/CUOkkSgeafHhEBM/review", "_blank");
     handleClick(
       { vertical: "top", horizontal: "center" },
       "Tack för att du lämnar ett omdöme!",
@@ -25,7 +23,7 @@ const GoogleReviewRequest = () => {
 
   return (
     <Stack
-      height="60vh"
+      height="400px"
       justifyContent="center"
       alignItems="center"
       px={{ xs: 2, sm: 4 }}
@@ -34,36 +32,17 @@ const GoogleReviewRequest = () => {
         sx={{
           maxWidth: "600px",
           padding: "20px",
-          backgroundColor: "white",
+          backgroundColor: "rgba(38, 37, 37, 0.7)",
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           textAlign: "center",
         }}
       >
-        <Typography
-          component="h1"
-          sx={{
-            fontSize: "28px",
-            lineHeight: "42px",
-            fontWeight: "600",
-            fontFamily: "Montserrat, sans-serif",
-            marginBottom: "10px",
-          }}
-        >
-          Vi skulle uppskatta din feedback!
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: "16px",
-            lineHeight: "24px",
-            fontFamily: "Montserrat, sans-serif",
-            color: "#555",
-            marginBottom: "20px",
-          }}
-        >
-          Hjälp oss att förbättra genom att lämna ett omdöme på Google. Ditt
-          omdöme betyder mycket för oss och våra kunder!
-        </Typography>
+        <S.Title>We would appreciate your feedback!</S.Title>
+        <S.Text>
+          help us to get better by leaving a review on Google. Your review means
+          a lot to us and our customers!
+        </S.Text>
         <Button
           onClick={handleReviewClick}
           sx={{
@@ -73,13 +52,13 @@ const GoogleReviewRequest = () => {
             fontSize: "16px",
             fontWeight: "600",
             textTransform: "none",
-            borderRadius: "50px",
+            borderRadius: "15px",
             "&:hover": {
               backgroundColor: "#357ae8",
             },
           }}
         >
-          Lämna ett omdöme
+          Leave a review
         </Button>
       </Box>
     </Stack>

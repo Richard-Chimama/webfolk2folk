@@ -1,8 +1,9 @@
-import { Box, Button, Input, Stack, Typography, Textarea } from "@mui/joy";
+import { Box, Input, Stack, Textarea } from "@mui/joy";
 import { useContext, useState } from "react";
 import { SnackbarContext } from "../../App";
 import { Modal } from "@mui/material";
 import FacebookCircularProgress from "../FacebookCircularProgress";
+import * as S from "./styled";
 
 const CustomerRegister = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -71,7 +72,7 @@ const CustomerRegister = () => {
       height="100vh"
       justifyContent="center"
       alignItems="center"
-      bgcolor={"lightgrey"}
+      bgcolor={"black"}
     >
       {" "}
       <Modal
@@ -92,36 +93,19 @@ const CustomerRegister = () => {
             width: { md: "700px" },
           }}
         >
-          <Typography
-            component="h1"
-            sx={{
-              fontSize: "28px", // Adjusted for mobile
-              lineHeight: "42px",
-              fontWeight: "600",
-              fontFamily: "Montserrat, sans-serif",
-              textAlign: "center",
-            }}
-          >
-            Har du fråga?
-          </Typography>
-          <Typography
-            component="i"
-            sx={{
-              width: "100%", // Full width for mobile responsiveness
-              textAlign: "center",
-              lineHeight: "19px",
-              fontFamily: "Montserrat, sans-serif",
-              marginBottom: "20px",
-            }}
-          >
-            Kontakta oss, vi är ett e-postmeddelande bort.
-          </Typography>
+          <S.Title>
+            Questions
+          </S.Title>
+          <S.Text>
+            Here you can ask about anything you want, what you think about our
+            company, or if you have any questions that haven't been answered yet.
+          </S.Text>
         </Box>
         <form name="contact" onSubmit={handleSubmit}>
           <Stack spacing={2} mx={{ xs: 2 }}>
             <Input
               sx={{ height: "45px" }}
-              placeholder="Skriv in din e-postadress"
+              placeholder="email address"
               type="email"
               name="email"
               value={userEmail}
@@ -130,7 +114,7 @@ const CustomerRegister = () => {
             />
             <Input
               sx={{ height: "45px" }}
-              placeholder="Ämne"
+              placeholder="Subject"
               name="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
@@ -138,23 +122,15 @@ const CustomerRegister = () => {
             />
             <Textarea
               minRows={4}
-              placeholder="Meddelande"
+              placeholder="Message"
               name="text"
               value={userText}
               onChange={(e) => setUserText(e.target.value)}
               required
             />
-            <Button
-              type="submit"
-              sx={{
-                width: "100%",
-                backgroundColor: "black",
-                color: "white",
-                height: "45px",
-              }}
-            >
-              Skicka in
-            </Button>
+            <S.SubmitButton>
+              Submit
+            </S.SubmitButton>
           </Stack>
         </form>
       </div>

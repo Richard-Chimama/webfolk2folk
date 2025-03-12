@@ -1,7 +1,8 @@
-import { Box, Divider, Grid, Typography } from "@mui/joy";
+import { Box, Divider, Typography } from "@mui/joy";
 import Spacer from "../Spacer";
 import * as S from "./styled";
-import WeeklySchedule from "../WeeklyShedule";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import MasonryImageList from "./MasonryImageList";
 
 const Main = () => {
   return (
@@ -11,76 +12,80 @@ const Main = () => {
           sx={{
             mx: { xs: "2%", md: "10%" },
             width: { xs: "97%", md: "80%" },
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: { xs: "flex-start", md: "center" },
+            alignItems: "center",
           }}
         >
-          <Spacer h="35px" />
-          <Typography
-            component="h1"
+          <Box
             sx={{
-              fontSize: "44px",
-              lineHeight: "62px",
-              fontWeight: "600",
-              fontFamily: "Montserrat, sans-serif",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: { xs: "flex-start", md: "center" },
+              alignItems: "center",
             }}
           >
-            Hej!
-          </Typography>
-          <Spacer h="25px" />
+            <Typography component="h1" sx={{ color: "whitesmoke" }}>
+              ADRESS
+            </Typography>
+            <S.Text>
+              Störtloppsvägen 20,{<br />}129 47 Hägersten
+              {<br />}
+              <S.MapLink href="https://maps.app.goo.gl/XcBLZ3QG6dNX9gnu5">
+                Map <ArrowOutwardIcon />
+              </S.MapLink>
+            </S.Text>
+          </Box>
+
+          <MasonryImageList />
+
+          <Spacer h="35px" />
+          <S.Title>Daily Offerings</S.Title>
+          <Box sx={{ fontWeight: "bold", fontStyle: "italic" }}>
+            Secondhand Streetwear | curated Aesthetics | Community & Culture
+          </Box>
           <S.Text>
-            Välkommen till Folk till Folk Secondhand, din nya destination för
-            secondhandkläder av hög kvalitet som ligger på{" "}
-            <b>Störtloppsvägen 20</b>. På Folk till Folk erbjuder vi ett brett
-            utbud av prisvärda secondhand-kläder för män, kvinnor och barn. Vi
-            sammanställer noggrant vårt urval genom att köpa från välrenommerade
-            butiker och personligen sortera donerade kläder för att säkerställa
-            att varje föremål uppfyller våra höga kvalitetsstandarder.
+            Explore handpicked Carhartt workwear, Levi denims, office siren
+            outfits, skater fits, and more
           </S.Text>
-          <Spacer h="25px" />
           <S.Text>
-            Vi är djupt engagerade i hållbarhet och miljövård. Genom att välja
-            begagnat sparar du inte bara pengar utan bidrar också till en mer
-            hållbar framtid. Vårt uppdrag är att göra snygga och högkvalitative
-            kläder tillgängliga för alla oavsett dudget.
+            Shop premium fur, leather pieces, and statement accessories
           </S.Text>
-          <Spacer h="25px" />
-          <S.Text>
-            Vi uppmuntrar dig att gå med oss ​​i denna ansträngning genom att
-            donera dina tidigare älskade kläder, skor och väskor. Dina
-            försiktigt använda föremål kan vara precis vad någon annan behöver.
-            Alla donationer ska vara rena och i gott skick, redo att hitta ett
-            nytt hem och förlänga deras livscykel.
-          </S.Text>
-          <Spacer h="25px" />
+          <S.Text>Discover Nike, Adidas, Puma, and NFL selections</S.Text>
 
           <S.Text>
             Hjälp oss främja en hållbar livsstil och återupptäck glädjen med
             secondhandshopping på Folk till Folk. Tillsammans kan vi göra
             skillnad!
           </S.Text>
-          <Spacer h="35px" />
+          <S.Text>
+            Selling things within fashion and entertainment recycled shopping
+            experience Enjoy a laid-back shopping experience—{" "}
+            <b>
+              bring your coffee, make friends, and find your next favorite
+              piece.
+            </b>
+          </S.Text>
           <Divider />
-
-          <Grid container spacing={2}>
-            <Grid xs={12} md={6} sm={6}>
-              <Box>
-                <Spacer h="16px" />
-                <Typography component="h1">ÖPPETTIDER</Typography>
-                <Spacer h="16px" />
-                <WeeklySchedule />
-              </Box>
-            </Grid>
-            <Grid xs={12} md={6} sm={6}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.4001493494702!2d17.967989799999998!3d59.292874000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f779ddec055e3%3A0xe1f1691e2891a443!2sFolk%20till%20folk!5e0!3m2!1ssv!2sse!4v1720987305027!5m2!1ssv!2sse"
-                width="100%"
-                height="450"
-                style={{ border: "0px" }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </Grid>
-          </Grid>
+          <Spacer h="35px" />
+          <S.Title>About us</S.Title>
+          <S.Text>
+            FolktillFolk was founded in 2024 with a vision beyond just selling
+            clothes—we set out to sell good feelings. From the very beginning,
+            our mission has been to make people feel great, not just in what
+            they wear but in how they see themselves. That purpose has driven us
+            every step of the way, and it continues to fuel our success.
+            <br />
+            <br />
+            Our secondhand clothes come from trusted suppliers across various
+            locations, including Spain, the UK, the USA, Italy, Poland, France,
+            and India and many more . Each piece is carefully selected and
+            thoroughly inspected to ensure quality and authenticity before it
+            reaches our store. We take great care in preparing every item, so
+            our customers can feel confident that they’re getting well-curated,
+            stylish, and high-quality clothing worth investing in.
+          </S.Text>
         </Box>
       </div>
     </Box>

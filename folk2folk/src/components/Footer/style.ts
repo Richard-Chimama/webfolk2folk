@@ -9,8 +9,18 @@ export const Text = styled.p`
 `;
 
 export const Footer = styled.div`
-  background-color: #f4f4f4;
+  background-color:black;
+  color: white;
   padding: 10px;
   text-align: center;
   font-size: 0.9em;
 `;
+
+export const Title = styled.h1`
+  line-height: 34px;
+  line-spacing: 19px;
+  font-family: "Newsreader", serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 700;
+`
