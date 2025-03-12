@@ -53,12 +53,6 @@ const Main = () => {
             Shop premium fur, leather pieces, and statement accessories
           </S.Text>
           <S.Text>Discover Nike, Adidas, Puma, and NFL selections</S.Text>
-
-          <S.Text>
-            Hjälp oss främja en hållbar livsstil och återupptäck glädjen med
-            secondhandshopping på Folk till Folk. Tillsammans kan vi göra
-            skillnad!
-          </S.Text>
           <S.Text>
             Selling things within fashion and entertainment recycled shopping
             experience Enjoy a laid-back shopping experience—{" "}
