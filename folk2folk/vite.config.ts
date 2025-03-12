@@ -18,6 +18,7 @@ export default defineConfig({
   },
   preview: {
     port: PORT,
-    host: '0.0.0.0'
-  }
+    host: '0.0.0.0',
+    allowedHosts: ["www.folktfolk.se", "*"],
+  },
 })
