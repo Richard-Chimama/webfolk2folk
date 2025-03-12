@@ -1,11 +1,11 @@
 import { Box, Snackbar, SnackbarOrigin } from "@mui/joy";
-import Header from "./components/Header";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
 import CustomerRegister from "./components/CustomerRegister";
 import Footer from "./components/Footer";
 import { createContext, useState } from "react";
 import GoogleReviewRequest from "./components/GoogleReview";
+import './App.css';
 interface State {
   open: boolean;
   message: string;
@@ -72,7 +72,6 @@ function App() {
           {state.message}
         </Snackbar>
         <NavBar />
-        <Header />
         <Main />
         <CustomerRegister />
         <GoogleReviewRequest />

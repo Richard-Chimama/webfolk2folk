@@ -8,9 +8,9 @@ import {
 } from "@mui/joy";
 import { FC, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../../assets/folk2.png";
+import Logo from "../../assets/folk1.jpeg";
 
-type OwnProps = {};
+type OwnProps = object;
 
 const Header: FC<OwnProps> = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -38,10 +38,15 @@ const Header: FC<OwnProps> = () => {
         padding: "0 16px",
       }}
     >
-      <Box>
+      <Box sx={{display: { xs:'none',sm: "none", md: "block" } }}>
         <img style={{ width: "100px" }} src={Logo} alt="folk till folk logo" />
       </Box>
-      <Box sx={{ flex: 1 }} />
+      <Box sx={{
+          fontFamily: "Butcherman, system-ui",
+          fontWeight: 400,
+          fontStyle: "normal",
+          fontSize: {sm:"34px",md:"64px"},
+      }} >FolktillFolk</Box>
       <Box
         sx={{
           display: { xs: "none", md: "flex" },
@@ -61,17 +66,17 @@ const Header: FC<OwnProps> = () => {
           }}
         >
           <ListItem role="none">
-            <ListItemButton role="menuitem" component="a" href="#home">
+            <ListItemButton role="menuitem" component="a" href="#home" sx={{color: 'white'}}>
               Hem
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
-            <ListItemButton role="menuitem" component="a" href="#about">
+            <ListItemButton role="menuitem" component="a" href="#about" sx={{color: 'white'}}>
               Om
             </ListItemButton>
           </ListItem>
           <ListItem role="none">
-            <ListItemButton role="menuitem" component="a" href="#contact">
+            <ListItemButton role="menuitem" component="a" href="#contact" sx={{color: 'white'}}>
               Kontakt
             </ListItemButton>
           </ListItem>
@@ -79,7 +84,7 @@ const Header: FC<OwnProps> = () => {
       </Box>
       <Box sx={{ display: { xs: "block", md: "none" } }}>
         <IconButton onClick={toggleDrawer(true)}>
-          <MenuIcon />
+          <MenuIcon sx={{color:'white'}} />
         </IconButton>
       </Box>
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>

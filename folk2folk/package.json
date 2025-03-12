@@ -20,6 +20,7 @@
     "dayjs": "^1.11.11",
     "days": "^1.1.1",
     "dotenv": "^16.4.5",
+    "framer-motion": "^12.4.13",
     "nodemailer": "^6.9.14",
     "prettier": "^3.3.2",
     "react": "^18.3.1",
