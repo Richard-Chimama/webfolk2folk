@@ -6,6 +6,10 @@ export const Text = styled.p`
   line-height: 34px;
   line-spacing: 19px;
   padding: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
 `;
 
 export const Footer = styled.div`
@@ -14,6 +18,10 @@ export const Footer = styled.div`
   padding: 10px;
   text-align: center;
   font-size: 0.9em;
+
+  @media (max-width: 600px) {
+    font-size: 9px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -23,4 +31,14 @@ export const Title = styled.h1`
   font-size: 34px;
   text-transform: uppercase;
   font-weight: 700;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+`
+
+export const IconLink = styled.a`
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
 `

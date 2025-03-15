@@ -49,7 +49,7 @@ const GoogleReviewRequest = () => {
             padding: "10px 20px",
             backgroundColor: "#4285F4",
             color: "white",
-            fontSize: "16px",
+            fontSize: {xs:'10px',md:"16px"},
             fontWeight: "600",
             textTransform: "none",
             borderRadius: "15px",

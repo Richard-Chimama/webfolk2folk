@@ -12,21 +12,19 @@ const Main = () => {
           sx={{
             mx: { xs: "2%", md: "10%" },
             width: { xs: "97%", md: "80%" },
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: { xs: "flex-start", md: "center" },
-            alignItems: "center",
+            
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: { xs: "flex-start", md: "center" },
-              alignItems: "center",
+              width: "100%",
+              display: {md:"flex"},
+              flexDirection:{md:'column'},
+              justifyContent: {md:'center'},
+              alignItems: {md:'center'},
             }}
           >
-            <Typography component="h1" sx={{ color: "whitesmoke" }}>
+            <Typography component="h1" sx={{ color: "whitesmoke", fontSize:'12px' }}>
               ADRESS
             </Typography>
             <S.Text>
@@ -42,7 +40,7 @@ const Main = () => {
 
           <Spacer h="35px" />
           <S.Title>Daily Offerings</S.Title>
-          <Box sx={{ fontWeight: "bold", fontStyle: "italic" }}>
+          <Box sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: '11px' }}>
             Secondhand Streetwear | curated Aesthetics | Community & Culture
           </Box>
           <S.Text>
