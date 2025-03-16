@@ -46,8 +46,8 @@ const CustomerRegister = () => {
 
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "E-post har skickats!",
-          "#07f9c1"
+          "Message sent successfully!",
+          "success"
         );
         setUserEmail("");
         setSubject("");
@@ -57,16 +57,16 @@ const CustomerRegister = () => {
         setLoading(false);
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "Hoppsan! Något gick fel.",
-          "#f95e85"
+          "Oops! Something went wrong.",
+          "error"
         );
         console.error("Error:", error);
       }
     } else {
       handleClick(
         { vertical: "top", horizontal: "center" },
-        "Vänligen fyll i alla fält korrekt.",
-        "#f95e85"
+        "Please fill in all fields correctly.",
+        "error"
       );
     }
   };

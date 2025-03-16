@@ -17,8 +17,8 @@ const GoogleReviewRequest = () => {
     window.open("https://g.page/r/CUOkkSgeafHhEBM/review", "_blank");
     handleClick(
       { vertical: "top", horizontal: "center" },
-      "Tack för att du lämnar ett omdöme!",
-      "#07f9c1"
+      "Thank you for leaving a review!",
+      "success"
     );
   };
 
