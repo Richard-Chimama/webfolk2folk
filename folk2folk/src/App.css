@@ -1,6 +1,129 @@
-#root {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Newsreader:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #60a5fa;
+  --primary-hover: #93c5fd;
+  --text-color: #e2e8f0;
+  --text-color-muted: #94a3b8;
+  --background-dark: #0f172a;
+  --background-darker: #020617;
+  --background-light: #1e293b;
+  --background-lighter: #334155;
+  --spacing-unit: 8px;
+  --border-color: #334155;
+}
+
+body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color:aliceblue;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-dark);
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Newsreader', serif;
+  margin: 0;
+  color: #ffffff;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background-darker);
+}
+
+/* Better focus styles */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Improved button styles */
+button {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  background-color: var(--background-light);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: var(--background-lighter);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Loading animation */
+.loading {
+  border: 3px solid var(--background-light);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--background-darker);
 }
