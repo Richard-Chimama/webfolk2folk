@@ -46,7 +46,7 @@ const CustomerRegister = () => {
 
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "Message sent successfully!",
+          "Meddelande skickat framgångsrikt!",
           "success"
         );
         setUserEmail("");
@@ -57,7 +57,7 @@ const CustomerRegister = () => {
         setLoading(false);
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "Oops! Something went wrong.",
+          "Oj! Något gick fel.",
           "error"
         );
         console.error("Error:", error);
@@ -65,7 +65,7 @@ const CustomerRegister = () => {
     } else {
       handleClick(
         { vertical: "top", horizontal: "center" },
-        "Please fill in all fields correctly.",
+        "Vänligen fyll i alla fält korrekt.",
         "error"
       );
     }
@@ -100,11 +100,11 @@ const CustomerRegister = () => {
           }}
         >
           <S.Title>
-            Get in Touch
+            Kontakta oss
           </S.Title>
           <S.Text>
-            Have a question or feedback? We'd love to hear from you. Send us a message
-            and we'll respond as soon as possible.
+            Har du en fråga eller feedback? Vi vill gärna höra från dig. Skicka ett meddelande
+            så svarar vi så snart som möjligt.
           </S.Text>
 
           <Box
@@ -148,7 +148,7 @@ const CustomerRegister = () => {
                         color: 'var(--text-color-muted)',
                       },
                     }}
-                    placeholder="Email address"
+                    placeholder="E-postadress"
                     type="email"
                     name="email"
                     value={userEmail}
@@ -184,7 +184,7 @@ const CustomerRegister = () => {
                         color: 'var(--text-color-muted)',
                       },
                     }}
-                    placeholder="Subject"
+                    placeholder="Ämne"
                     name="subject"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
@@ -202,7 +202,7 @@ const CustomerRegister = () => {
                   }} />
                   <Textarea
                     minRows={4}
-                    placeholder="Your message"
+                    placeholder="Ditt meddelande"
                     name="text"
                     value={userText}
                     onChange={(e) => setUserText(e.target.value)}
@@ -227,7 +227,7 @@ const CustomerRegister = () => {
                 </Box>
 
                 <S.SubmitButton>
-                  Send Message
+                  Skicka meddelande
                   <SendIcon sx={{ ml: 1, fontSize: '18px' }} />
                 </S.SubmitButton>
               </Stack>

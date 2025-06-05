@@ -17,9 +17,9 @@ const Header: FC<OwnProps> = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" }
+    { id: "home", label: "Hem" },
+    { id: "about", label: "Om oss" },
+    { id: "contact", label: "Kontakt" }
   ];
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -45,7 +45,7 @@ const Header: FC<OwnProps> = () => {
       }}
     >
       <Box sx={{display: { xs:'none', sm: "none", md: "block" } }}>
-        <img style={{ width: "100px" }} src={Logo} alt="folk till folk logo" />
+        <img style={{ width: "100px" }} src={Logo} alt="folk till folk logotyp" />
       </Box>
       
       <Box sx={{

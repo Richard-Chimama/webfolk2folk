@@ -17,7 +17,7 @@ const GoogleReviewRequest = () => {
     window.open("https://g.page/r/CUOkkSgeafHhEBM/review", "_blank");
     handleClick(
       { vertical: "top", horizontal: "center" },
-      "Thank you for leaving a review!",
+      "Tack för att du lämnar en recension!",
       "success"
     );
   };
@@ -52,19 +52,19 @@ const GoogleReviewRequest = () => {
               <StarIcon sx={{ color: '#FFC107', fontSize: 40, mb: 2 }} />
             </Box>
             
-            <S.Title>Share Your Experience</S.Title>
+            <S.Title>Dela din upplevelse</S.Title>
             
             <S.Text>
-              Your feedback helps us grow and improve. Share your experience with our community
-              and help others discover sustainable fashion at FolktillFolk.
+              Din feedback hjälper oss att växa och förbättras. Dela din upplevelse med vår gemenskap
+              och hjälp andra att upptäcka hållbart mode på FolktillFolk.
             </S.Text>
 
             <S.ReviewButton onClick={handleReviewClick}>
-              Write a Review on Google
+              Skriv en recension på Google
             </S.ReviewButton>
 
             <S.SubText>
-              Your honest feedback means the world to us and helps shape the future of sustainable fashion.
+              Din ärliga feedback betyder världen för oss och hjälper till att forma framtiden för hållbart mode.
             </S.SubText>
           </Stack>
         </Box>

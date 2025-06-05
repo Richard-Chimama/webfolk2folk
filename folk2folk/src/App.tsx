@@ -1,15 +1,17 @@
 import { Box, Snackbar, SnackbarOrigin, IconButton } from "@mui/joy";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
-import CustomerRegister from "./components/CustomerRegister";
-import Footer from "./components/Footer";
-import { createContext, useState } from "react";
-import GoogleReviewRequest from "./components/GoogleReview";
+import { createContext, useState, lazy, Suspense } from "react";
 import './App.css';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
+
+// Lazy load components that are below the fold
+const CustomerRegister = lazy(() => import("./components/CustomerRegister"));
+const Footer = lazy(() => import("./components/Footer"));
+const GoogleReviewRequest = lazy(() => import("./components/GoogleReview"));
 
 interface State {
   open: boolean;
@@ -158,9 +160,11 @@ function App() {
         </Snackbar>
         <NavBar />
         <Main />
-        <CustomerRegister />
-        <GoogleReviewRequest />
-        <Footer />
+        <Suspense fallback={<div>Laddar...</div>}>
+          <CustomerRegister />
+          <GoogleReviewRequest />
+          <Footer />
+        </Suspense>
       </SnackbarContext.Provider>
     </Box>
   );

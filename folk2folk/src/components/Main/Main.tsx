@@ -11,26 +11,26 @@ const Main = () => {
     <S.Container>
       <div id="about">
         <Box sx={{ position: 'relative', mb: 6 }}>
-          <S.Title>Welcome to FolktillFolk</S.Title>
+          <S.Title>Välkommen till FolktillFolk</S.Title>
           <S.Text style={{ fontSize: '18px', fontStyle: 'italic', marginBottom: '24px', color: 'var(--text-color-muted)' }}>
-            Where Style Meets Sustainability
+            Där stil möter hållbarhet
           </S.Text>
           
           <S.HighlightBox>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <LocalMallIcon sx={{ fontSize: 24, color: 'var(--primary-color)', mr: 2 }} />
-              <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Premium Curated Collection</S.Text>
+              <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Premium kuraterad kollektion</S.Text>
             </Box>
             <S.Text>
-              Discover our handpicked selection of high-quality secondhand fashion:
+              Upptäck vårt handplockade utbud av högkvalitativ second hand-mode:
             </S.Text>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
-              <S.Badge>Carhartt Workwear</S.Badge>
-              <S.Badge>Levi's Denim</S.Badge>
-              <S.Badge>Office Attire</S.Badge>
-              <S.Badge>Skater Fits</S.Badge>
-              <S.Badge>Premium Fur</S.Badge>
-              <S.Badge>Leather Pieces</S.Badge>
+              <S.Badge>Carhartt Arbetskläder</S.Badge>
+              <S.Badge>Levi's Jeans</S.Badge>
+              <S.Badge>Kontorskläder</S.Badge>
+              <S.Badge>Skater-stil</S.Badge>
+              <S.Badge>Premium päls</S.Badge>
+              <S.Badge>Läderprodukter</S.Badge>
             </Box>
           </S.HighlightBox>
 
@@ -39,44 +39,44 @@ const Main = () => {
           <S.HighlightBox>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <RecyclingIcon sx={{ fontSize: 24, color: 'var(--primary-color)', mr: 2 }} />
-              <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Sustainable Fashion</S.Text>
+              <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Hållbart mode</S.Text>
             </Box>
             <S.Text>
-              Shop premium brands like Nike, Adidas, Puma, and NFL selections while contributing to a more sustainable future.
-              Each piece is carefully selected and thoroughly inspected to ensure quality and authenticity.
+              Handla premium varumärken som Nike, Adidas, Puma och NFL-produkter medan du bidrar till en mer hållbar framtid.
+              Varje plagg är noga utvalt och noggrant inspekterat för att säkerställa kvalitet och äkthet.
             </S.Text>
           </S.HighlightBox>
 
           <Box sx={{ mt: 6 }}>
-            <S.Title>Visit Us</S.Title>
+            <S.Title>Besök oss</S.Title>
             <S.HighlightBox>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                 <PeopleIcon sx={{ fontSize: 24, color: 'var(--primary-color)', mr: 2 }} />
-                <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Community Space</S.Text>
+                <S.Text style={{ margin: 0, fontWeight: 500, color: '#fff' }}>Gemenskapsplats</S.Text>
               </Box>
               <S.Text>
                 Störtloppsvägen 20,{<br />}129 47 Hägersten
                 <S.MapLink href="https://maps.app.goo.gl/XcBLZ3QG6dNX9gnu5">
-                  View on Map <ArrowOutwardIcon />
+                  Visa på karta <ArrowOutwardIcon />
                 </S.MapLink>
               </S.Text>
               <S.Text>
-                Bring your coffee, make friends, and find your next favorite piece in our welcoming space.
+                Ta med ditt kaffe, träffa nya vänner och hitta ditt nästa favoritplagg i vårt välkomnande rum.
               </S.Text>
             </S.HighlightBox>
           </Box>
 
           <Box sx={{ mt: 6 }}>
-            <S.Title>Our Story</S.Title>
+            <S.Title>Vår historia</S.Title>
             <S.HighlightBox>
               <S.Text>
-                Founded in 2024, FolktillFolk was born from a vision that transcends traditional retail—we're here to sell good feelings.
-                Our mission is to make people feel great, not just in what they wear but in how they see themselves.
+                Grundat 2024, FolktillFolk föddes ur en vision som går bortom traditionell handel—vi är här för att sälja goda känslor.
+                Vårt uppdrag är att få människor att känna sig bra, inte bara i vad de bär utan i hur de ser sig själva.
               </S.Text>
               <S.Text>
-                Our carefully curated collection comes from trusted suppliers across the globe, including Spain, the UK, the USA,
-                Italy, Poland, France, and India. Each piece tells a story and carries the promise of quality and authenticity
-                that defines the FolktillFolk experience.
+                Vår noggrant kuraterade kollektion kommer från pålitliga leverantörer över hela världen, inklusive Spanien, Storbritannien, USA,
+                Italien, Polen, Frankrike och Indien. Varje plagg berättar en historia och bär löftet om kvalitet och äkthet
+                som definierar FolktillFolk-upplevelsen.
               </S.Text>
             </S.HighlightBox>
           </Box>

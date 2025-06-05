@@ -1,4 +1,3 @@
-import { Box } from "@mui/joy";
 import * as S from "./style";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
@@ -10,7 +9,7 @@ const Footer = () => {
     <S.FooterContainer>
       <S.FooterContent>
         <S.SocialSection>
-          <S.Title>Connect With Us</S.Title>
+          <S.Title>Kontakta oss</S.Title>
           <S.SocialLinks>
             <S.SocialLink
               target="_blank"
@@ -39,7 +38,7 @@ const Footer = () => {
         <S.Divider />
         
         <S.Copyright>
-          &copy; {date} FolktillFolk Secondhand Store. All rights reserved.
+          &copy; {date} FolktillFolk Secondhand Butik. Alla rättigheter förbehållna.
         </S.Copyright>
       </S.FooterContent>
     </S.FooterContainer>
