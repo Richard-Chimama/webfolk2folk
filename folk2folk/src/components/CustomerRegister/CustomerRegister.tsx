@@ -4,6 +4,10 @@ import { SnackbarContext } from "../../App";
 import { Modal } from "@mui/material";
 import FacebookCircularProgress from "../FacebookCircularProgress";
 import * as S from "./styled";
+import EmailIcon from '@mui/icons-material/Email';
+import SubjectIcon from '@mui/icons-material/Subject';
+import MessageIcon from '@mui/icons-material/Message';
+import SendIcon from '@mui/icons-material/Send';
 
 const CustomerRegister = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -42,8 +46,8 @@ const CustomerRegister = () => {
 
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "E-post har skickats!",
-          "#07f9c1"
+          "Meddelande skickat framgångsrikt!",
+          "success"
         );
         setUserEmail("");
         setSubject("");
@@ -53,8 +57,8 @@ const CustomerRegister = () => {
         setLoading(false);
         handleClick(
           { vertical: "top", horizontal: "center" },
-          "Hoppsan! Något gick fel.",
-          "#f95e85"
+          "Oj! Något gick fel.",
+          "error"
         );
         console.error("Error:", error);
       }
@@ -62,79 +66,176 @@ const CustomerRegister = () => {
       handleClick(
         { vertical: "top", horizontal: "center" },
         "Vänligen fyll i alla fält korrekt.",
-        "#f95e85"
+        "error"
       );
     }
   };
 
   return (
-    <Stack
-      height="100vh"
-      justifyContent="center"
-      alignItems="center"
-      bgcolor={"black"}
-    >
-      {" "}
+    <S.Container>
       <Modal
         open={loading}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{ 
+          display: "flex", 
+          justifyContent: "center", 
+          alignItems: "center",
+          '& .MuiBackdrop-root': {
+            backgroundColor: 'rgba(2, 6, 23, 0.8)'
+          }
+        }}
       >
         <FacebookCircularProgress size={50} />
       </Modal>
-      <div id="contact">
+
+      <S.ContentWrapper>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
-            marginBottom: "10px",
-            padding: { xs: "0 20px", sm: "0 40px" }, // Mobile friendly
-            width: { md: "700px" },
+            width: "100%",
+            maxWidth: "700px",
+            margin: "0 auto",
+            padding: { xs: "0 20px", sm: "0 40px" },
           }}
         >
           <S.Title>
-            Questions
+            Kontakta oss
           </S.Title>
           <S.Text>
-            Here you can ask about anything you want, what you think about our
-            company, or if you have any questions that haven't been answered yet.
+            Har du en fråga eller feedback? Vi vill gärna höra från dig. Skicka ett meddelande
+            så svarar vi så snart som möjligt.
           </S.Text>
+
+          <Box
+            sx={{
+              width: '100%',
+              maxWidth: '500px',
+              mt: 4,
+              p: { xs: 2, sm: 4 },
+              backgroundColor: 'var(--background-light)',
+              borderRadius: '12px',
+              border: '1px solid var(--border-color)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            <form name="contact" onSubmit={handleSubmit}>
+              <Stack spacing={3}>
+                <Box sx={{ position: 'relative' }}>
+                  <EmailIcon sx={{ 
+                    position: 'absolute',
+                    left: '12px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    color: 'var(--text-color-muted)',
+                    fontSize: '20px'
+                  }} />
+                  <Input
+                    sx={{
+                      height: "45px",
+                      pl: '44px !important',
+                      backgroundColor: 'var(--background-dark)',
+                      border: '1px solid var(--border-color)',
+                      color: 'var(--text-color)',
+                      '&:hover': {
+                        borderColor: 'var(--primary-color)',
+                      },
+                      '&:focus-within': {
+                        borderColor: 'var(--primary-color)',
+                        boxShadow: '0 0 0 3px rgba(96, 165, 250, 0.15)',
+                      },
+                      '&::placeholder': {
+                        color: 'var(--text-color-muted)',
+                      },
+                    }}
+                    placeholder="E-postadress"
+                    type="email"
+                    name="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                    required
+                  />
+                </Box>
+
+                <Box sx={{ position: 'relative' }}>
+                  <SubjectIcon sx={{ 
+                    position: 'absolute',
+                    left: '12px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    color: 'var(--text-color-muted)',
+                    fontSize: '20px'
+                  }} />
+                  <Input
+                    sx={{
+                      height: "45px",
+                      pl: '44px !important',
+                      backgroundColor: 'var(--background-dark)',
+                      border: '1px solid var(--border-color)',
+                      color: 'var(--text-color)',
+                      '&:hover': {
+                        borderColor: 'var(--primary-color)',
+                      },
+                      '&:focus-within': {
+                        borderColor: 'var(--primary-color)',
+                        boxShadow: '0 0 0 3px rgba(96, 165, 250, 0.15)',
+                      },
+                      '&::placeholder': {
+                        color: 'var(--text-color-muted)',
+                      },
+                    }}
+                    placeholder="Ämne"
+                    name="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    required
+                  />
+                </Box>
+
+                <Box sx={{ position: 'relative' }}>
+                  <MessageIcon sx={{ 
+                    position: 'absolute',
+                    left: '12px',
+                    top: '14px',
+                    color: 'var(--text-color-muted)',
+                    fontSize: '20px'
+                  }} />
+                  <Textarea
+                    minRows={4}
+                    placeholder="Ditt meddelande"
+                    name="text"
+                    value={userText}
+                    onChange={(e) => setUserText(e.target.value)}
+                    required
+                    sx={{
+                      pl: '44px !important',
+                      backgroundColor: 'var(--background-dark)',
+                      border: '1px solid var(--border-color)',
+                      color: 'var(--text-color)',
+                      '&:hover': {
+                        borderColor: 'var(--primary-color)',
+                      },
+                      '&:focus-within': {
+                        borderColor: 'var(--primary-color)',
+                        boxShadow: '0 0 0 3px rgba(96, 165, 250, 0.15)',
+                      },
+                      '&::placeholder': {
+                        color: 'var(--text-color-muted)',
+                      },
+                    }}
+                  />
+                </Box>
+
+                <S.SubmitButton>
+                  Skicka meddelande
+                  <SendIcon sx={{ ml: 1, fontSize: '18px' }} />
+                </S.SubmitButton>
+              </Stack>
+            </form>
+          </Box>
         </Box>
-        <form name="contact" onSubmit={handleSubmit}>
-          <Stack spacing={2} mx={{ xs: 2 }}>
-            <Input
-              sx={{ height: "45px" }}
-              placeholder="email address"
-              type="email"
-              name="email"
-              value={userEmail}
-              onChange={(e) => setUserEmail(e.target.value)}
-              required
-            />
-            <Input
-              sx={{ height: "45px" }}
-              placeholder="Subject"
-              name="subject"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              required
-            />
-            <Textarea
-              minRows={4}
-              placeholder="Message"
-              name="text"
-              value={userText}
-              onChange={(e) => setUserText(e.target.value)}
-              required
-            />
-            <S.SubmitButton>
-              Submit
-            </S.SubmitButton>
-          </Stack>
-        </form>
-      </div>
-    </Stack>
+      </S.ContentWrapper>
+    </S.Container>
   );
 };
 

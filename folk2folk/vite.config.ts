@@ -11,6 +11,17 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor libraries into separate chunks
+          'react-vendor': ['react', 'react-dom'],
+          'mui-vendor': ['@mui/joy', '@mui/material', '@mui/icons-material'],
+          // Keep other vendor libraries together
+          'vendor': ['@emotion/react', '@emotion/styled']
+        }
+      }
+    }
   },
   server: {
     port: PORT,

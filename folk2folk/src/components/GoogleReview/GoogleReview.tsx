@@ -1,7 +1,8 @@
-import { Box, Button, Stack } from "@mui/joy";
+import { Box, Stack } from "@mui/joy";
 import { useContext } from "react";
 import { SnackbarContext } from "../../App";
 import * as S from "./styled";
+import StarIcon from '@mui/icons-material/Star';
 
 const GoogleReviewRequest = () => {
   const snackbarContext = useContext(SnackbarContext);
@@ -16,52 +17,59 @@ const GoogleReviewRequest = () => {
     window.open("https://g.page/r/CUOkkSgeafHhEBM/review", "_blank");
     handleClick(
       { vertical: "top", horizontal: "center" },
-      "Tack för att du lämnar ett omdöme!",
-      "#07f9c1"
+      "Tack för att du lämnar en recension!",
+      "success"
     );
   };
 
   return (
-    <Stack
-      height="400px"
-      justifyContent="center"
-      alignItems="center"
-      px={{ xs: 2, sm: 4 }}
-    >
-      <Box
-        sx={{
-          maxWidth: "600px",
-          padding: "20px",
-          backgroundColor: "rgba(38, 37, 37, 0.7)",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          textAlign: "center",
-        }}
-      >
-        <S.Title>We would appreciate your feedback!</S.Title>
-        <S.Text>
-          help us to get better by leaving a review on Google. Your review means
-          a lot to us and our customers!
-        </S.Text>
-        <Button
-          onClick={handleReviewClick}
+    <S.ReviewContainer>
+      <S.ContentWrapper>
+        <Box
           sx={{
-            padding: "10px 20px",
-            backgroundColor: "#4285F4",
-            color: "white",
-            fontSize: {xs:'10px',md:"16px"},
-            fontWeight: "600",
-            textTransform: "none",
-            borderRadius: "15px",
-            "&:hover": {
-              backgroundColor: "#357ae8",
-            },
+            maxWidth: "700px",
+            padding: { xs: "30px 20px", md: "40px" },
+            backgroundColor: 'var(--background-light)',
+            borderRadius: "12px",
+            border: '1px solid var(--border-color)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+            textAlign: "center",
+            position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          Leave a review
-        </Button>
-      </Box>
-    </Stack>
+          <Box sx={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            height: '4px', 
+            background: 'linear-gradient(90deg, var(--primary-color), var(--primary-hover))'
+          }} />
+          
+          <Stack spacing={3} alignItems="center">
+            <Box sx={{ mb: 1 }}>
+              <StarIcon sx={{ color: '#FFC107', fontSize: 40, mb: 2 }} />
+            </Box>
+            
+            <S.Title>Dela din upplevelse</S.Title>
+            
+            <S.Text>
+              Din feedback hjälper oss att växa och förbättras. Dela din upplevelse med vår gemenskap
+              och hjälp andra att upptäcka hållbart mode på FolktillFolk.
+            </S.Text>
+
+            <S.ReviewButton onClick={handleReviewClick}>
+              Skriv en recension på Google
+            </S.ReviewButton>
+
+            <S.SubText>
+              Din ärliga feedback betyder världen för oss och hjälper till att forma framtiden för hållbart mode.
+            </S.SubText>
+          </Stack>
+        </Box>
+      </S.ContentWrapper>
+    </S.ReviewContainer>
   );
 };
 
